@@ -1,5 +1,11 @@
 version: 2.1
+
 descrption: Tasks for managing node Javascript packages in CircleCI builds
+
+display:
+  home_url: "https://github.com/boxt/orbs"
+  source_url: "https://github.com/boxt/node-orb/blob/master/config.yml"
+
 commands:
   cache-read:
     steps:
