@@ -1,5 +1,10 @@
 # BOXT CircleCI Node orb
 
+<!--
+The version number below is automatically populated by a GitHub workflow.
+You can see how this works in ./github/workflows/update-readme-workflow.yml
+-->
+
 <!-- VERSION_SNIPPET_START -->
 ## Add to your config.yml
 
