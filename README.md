@@ -23,3 +23,8 @@ https://circleci.com/developer/orbs/orb/boxt/node
 
 
 Part of [boxt/orbs](https://github.com/boxt/orbs)
+
+## References
+
+* https://glebbahmutov.com/blog/do-not-let-cypress-cache-snowball/
+* https://docs.cypress.io/guides/guides/continuous-integration.html#Caching

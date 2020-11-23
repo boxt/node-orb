@@ -12,17 +12,14 @@ commands:
       - restore_cache:
           keys:
             - yarn-cache-{{ checksum "yarn.lock" }}
-
   cache-write:
     steps:
       - save_cache:
           key: yarn-cache-{{ checksum "yarn.lock" }}
           paths:
-            - ./.cache
+            - ~/.cache
             - ./node_modules
 
   install:
     steps:
-      - run:
-          name: "Install yarn dependencies"
-          command: yarn install
+      - run: "yarn install --cache-folder=~/.cache/yarn --frozen-lockfile"
