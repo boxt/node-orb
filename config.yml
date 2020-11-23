@@ -11,12 +11,12 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - npm-cache-{{ checksum "yarn.lock" }}
+            - yarn-cache-{{ checksum "yarn.lock" }}
 
   cache-write:
     steps:
       - save_cache:
-          key: npm-cache-{{ checksum "yarn.lock" }}
+          key: yarn-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./.cache
             - ./node_modules
