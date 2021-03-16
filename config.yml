@@ -1,6 +1,6 @@
 version: 2.1
 
-description: Tasks for managing node Javascript packages in CircleCI builds
+description: Tasks for managing Node modules in CircleCI builds
 
 display:
   home_url: "https://github.com/boxt/orbs"
@@ -11,17 +11,15 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - npm-cache-{{ checksum "yarn.lock" }}
-
+            - yarn-cache-{{ checksum "yarn.lock" }}
   cache-write:
     steps:
       - save_cache:
-          key: npm-cache-{{ checksum "yarn.lock" }}
+          key: yarn-cache-{{ checksum "yarn.lock" }}
           paths:
+            - ~/.cache
             - ./node_modules
 
   install:
     steps:
-      - run:
-          name: "Install yarn dependencies"
-          command: yarn install
+      - run: "yarn install --cache-folder=~/.cache/yarn --frozen-lockfile"

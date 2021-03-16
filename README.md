@@ -10,7 +10,7 @@ You can see how this works in ./github/workflows/update-readme-workflow.yml
 
 ``` yml
 orbs:
-  rubocop: boxt/rubocop@0.1.1
+  rubocop: boxt/node@0.2.0
 
 ```
 
@@ -23,3 +23,9 @@ https://circleci.com/developer/orbs/orb/boxt/node
 
 
 Part of [boxt/orbs](https://github.com/boxt/orbs)
+
+## References
+
+* https://glebbahmutov.com/blog/do-not-let-cypress-cache-snowball/
+* https://docs.cypress.io/guides/guides/continuous-integration.html#Caching
+ng
