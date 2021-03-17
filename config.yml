@@ -17,9 +17,10 @@ commands:
       - save_cache:
           key: npm-cache-{{ checksum "package.json" }}-{{checksum "package-lock.json" }}
           paths:
+            - ~/.cache
             - ./node_modules
   install:
     steps:
-      - run: 
+      - run:
           name: Install node dependencies
           command: "[ ! -d node_modules ] && npm ci --loglevel warn --yes || echo package.json and package-lock.json unchanged. Using cache."
