@@ -11,16 +11,18 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - npm-cache-{{ arch }}-{{ .Branch }}-{{checksum "package-lock.json" }}
+            - node-cache-{{ arch }}-{{ .Branch }}-{{checksum "package-lock.json" }}
+          name: Restore Node modules cache
   cache-write:
     steps:
       - save_cache:
-          key: npm-cache-{{ arch }}-{{ .Branch }}-{{checksum "package-lock.json" }}
+          key: node-cache-{{ arch }}-{{ .Branch }}-{{checksum "package-lock.json" }}
+          name: Save Node modules cache
           paths:
             - ~/.cache
             - ./node_modules
   install:
     steps:
       - run:
-          name: Install node dependencies
+          name: Install Node modules
           command: "npm i"
