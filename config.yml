@@ -11,12 +11,12 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - node-cache-{{ arch }}-{{ .Branch }}-{{checksum "package-lock.json" }}
+            - node-cache-{{ arch }}-{{checksum "package-lock.json" }}
           name: Restore Node modules cache
   cache-write:
     steps:
       - save_cache:
-          key: node-cache-{{ arch }}-{{ .Branch }}-{{checksum "package-lock.json" }}
+          key: node-cache-{{ arch }}-{{checksum "package-lock.json" }}
           name: Save Node modules cache
           paths:
             - ~/.cache
