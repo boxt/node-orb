@@ -10,7 +10,7 @@ You can see how this works in ./github/workflows/update-readme-workflow.yml
 
 ``` yml
 orbs:
-  rubocop: boxt/node@0.4.1
+  rubocop: boxt/node@0.5.0
 
 ```
 
